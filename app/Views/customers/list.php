@@ -4,7 +4,7 @@
                     <main id="js-page-content" role="main" class="page-content">
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-                            <li class="breadcrumb-item">Users</li>
+                            <li class="breadcrumb-item">Customers</li>
                             <li class="breadcrumb-item active">List</li>
                             <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
                         </ol>
@@ -39,7 +39,7 @@
 
                                     <div class="panel-hdr">                                     
                                         <h2>
-                                            <a class="btn btn-primary" href="<?php echo base_url(); ?>/users/addUser" role="button"><i class="fal fa-plus mr-1"></i> Add Users</a>
+                                            <a class="btn btn-primary" href="<?php echo base_url(); ?>/customers/addCustomers" role="button"><i class="fal fa-plus mr-1"></i> Add Customers</a>
                                        
                                             <span class="fw-300"><i> </i></span>
                                         </h2> 
@@ -59,8 +59,7 @@
                                                         <th>Firstname</th>
                                                         <th>Lastname</th>
                                                         <th>Mobile</th>
-                                                        <th>City</th>
-                                                        <th>Level</th>
+                                                        <th>City</th>                                               
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
@@ -73,17 +72,16 @@
                                                         <td><?php echo $vl['firstname']; ?></td>
                                                         <td><?php echo $vl['lastname']; ?></td>
                                                         <td><?php echo $vl['mobile']; ?></td>
-                                                        <td><?php echo $vl['city']; ?></td>
-                                                        <td><?php echo $vl['level'] ; ?></td>
+                                                        <td><?php echo $vl['city']; ?></td>                                         
                                                         <td>
                                                                                                           
-                                                        <a href="<?php echo base_url(); ?>/users/editUser/<?php echo $vl['idUsers']; ?>" class="btn btn-success btn-icon rounded-circle">
+                                                        <a href="<?php echo base_url(); ?>/customers/editCustomer/<?php echo $vl['idCustomers']; ?>" class="btn btn-success btn-icon rounded-circle">
                                                             <i class="fal fa-pencil fs-md"></i>
                                                         </a>
-                                                        <a href="<?php echo base_url(); ?>/users/viewUser/<?php echo $vl['idUsers']; ?>" class="btn btn-default btn-icon rounded-circle">
+                                                        <a href="<?php echo base_url(); ?>/customers/viewCustomer/<?php echo $vl['idCustomers']; ?>" class="btn btn-default btn-icon rounded-circle">
                                                             <i class="fal fa-search"></i>
                                                         </a>
-                                                        <a href="<?php echo base_url(); ?>/users/deleteUser/<?php echo $vl['idUsers']; ?>" class="btn btn-danger btn-icon rounded-circle">
+                                                        <a href="<?php echo base_url(); ?>/customers/deleteCustomer/<?php echo $vl['idCustomers']; ?>" class="btn btn-danger btn-icon rounded-circle">
                                                             <i class="fal fa-times"></i>
                                                         </a>
 
@@ -99,8 +97,7 @@
                                                         <th>Firstname</th>
                                                         <th>Lastname</th>
                                                         <th>Mobile</th>
-                                                        <th>City</th>
-                                                        <th>Level</th>
+                                                        <th>City</th>                                          
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>

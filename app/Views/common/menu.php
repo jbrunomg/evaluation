@@ -5,6 +5,12 @@
 
       
       $dashboard = "";
+
+      $people    = "";
+      $customers = "";
+      $providers = "";
+      $employees = "";
+
       $settings  = "";
       $users     = "";
       $emitter   = "";
@@ -15,6 +21,20 @@
         case 'dashboard':
           $dashboard = 'active';
           break;
+ 
+        case 'customers':
+          $customers  = 'active';
+          $people     = 'active open';
+          break; 
+        case 'providers':
+          $providers  = 'active';
+          $people     = 'active open';
+          break; 
+        case 'employees':
+          $employees  = 'active';
+          $people     = 'active open';
+          break;      
+
         case 'users':
           $users    = 'active';
           $settings = 'active open';
@@ -22,7 +42,7 @@
         case 'emitter':
           $emitter  = 'active';
           $settings = 'active open';
-          break;  
+          break;    
     
         
         default:
@@ -88,21 +108,32 @@
                             </li>
 
 
-<!--                             <li class="active open">
+
+                            <li class="<?php  echo  $people; ?>">
                                 <a href="#" title="Application Intel" data-filter-tags="application intel">
                                     <i class="fal fa-info-circle"></i>
-                                    <span class="nav-link-text" data-i18n="nav.application_intel">Application</span>
+                                    <span class="nav-link-text" data-i18n="nav.application_intel">People</span>
                                 </a>
                                 <ul>
-                                    <li class="active">
-                                        <a href="<?php echo base_url(); ?>/dashboard/index" title="Analytics Dashboard" data-filter-tags="application intel analytics dashboard">
-                                            <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Dashboard</span>
+                                    <li class="<?php echo $customers; ?>">
+                                        <a href="<?php echo base_url(); ?>/customers/index" title="Analytics Dashboard" data-filter-tags="application intel analytics dashboard">
+                                            <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Customers</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?php echo $providers; ?>">
+                                        <a href="<?php echo base_url(); ?>/providers/index" title="Analytics Dashboard" data-filter-tags="application intel analytics dashboard">
+                                            <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Providers</span>
+                                        </a>
+                                    </li>
+                                    <li class="<?php echo $employees; ?>">
+                                        <a href="<?php echo base_url(); ?>/employees/index" title="Analytics Dashboard" data-filter-tags="application intel analytics dashboard">
+                                            <span class="nav-link-text" data-i18n="nav.application_intel_analytics_dashboard">Employees</span>
                                         </a>
                                     </li>
 
             
                                 </ul>
-                            </li> -->
+                            </li> 
 
 
 

@@ -5,7 +5,7 @@
     <main id="js-page-content" role="main" class="page-content">
         <ol class="breadcrumb page-breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-            <li class="breadcrumb-item">Users</li>
+            <li class="breadcrumb-item">Customers</li>
             <li class="breadcrumb-item active">List</li>
             <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
         </ol>
@@ -42,9 +42,9 @@
       
                 </div>
                 <div class="panel-content p-0">
-                    <form class="needs-validation" action="<?php echo base_url(); ?>/users/editUserToDB/<?php echo $result['idUsers'] ?>" method="post" novalidate>
+                    <form class="needs-validation" action="<?php echo base_url(); ?>/customers/editCustomerToDB/<?php echo $result['idCustomers'] ?>" method="post" novalidate>
 
-                        <input type="hidden" name="idUsers" value="<?php echo $result['idUsers'] ?>">
+                        <input type="hidden" name="idCustomers" value="<?php echo $result['idCustomers'] ?>">
 
                         <div class="panel-content">
                             <div class="form-row">
@@ -117,23 +117,7 @@
                                     </div>
                                 </div>
 
-
-                                <div class="col-md-4 mb-3">
-                                    <label class="form-label" for="validationCustom07">Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" id="validationCustom07" placeholder="password" name="password" value="<?php echo $result['password'] ?>" required>
-                                    <div class="invalid-feedback">
-                                        Please provide a valid password.
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 mb-3">
-                                    <label class="form-label" for="example-select">Level</label>
-                                    <select class="form-control" id="example-select" name="level" >
-                                        <option value="Active" <?php echo ($result['level']  == 'Active')?'selected':''; ?>>Active</option>
-                                        <option value="Inactive" <?php echo ($result['level']  == 'Inactive')?'selected':''; ?>>Inactive</option>        
-                                    </select>
-                                </div>
-
+                                      
               
 
                                 <div class="col-12">
@@ -158,13 +142,8 @@
                         </div>
 
 
-                        <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0 d-flex flex-row align-items-center">
-               
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="invalidCheck" name="newsletter" value="1" <?php if($result['newsletter'] <> 0){ echo 'checked';}else{ echo '';} ?> >
-                                <label class="custom-control-label" for="invalidCheck">Agree to newsletter </label>                            
-                            </div>
-
+                        <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0 d-flex flex-row align-items-center">             
+              
                             <button class="btn btn-primary ml-auto" type="submit">Submit form</button>
                         </div>
 

@@ -38,11 +38,6 @@ $routes->add('logout','Home::logout');
 
 $routes->get('/', 'Dashboard::index');
 
-$routes->get('/', 'Users::index');
-$routes->add('editUser','Users::editUser');
-$routes->add('editUser/(:num)','Users::editUserToDB/$1');
-$routes->add('deleteUser','Users::deleteUser');
-$routes->add('viewUser','Users::viewUser');
 
 
 /**

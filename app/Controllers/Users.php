@@ -17,6 +17,53 @@ class Users extends BaseController
 		echo view('common/layout',$data);
 	}
 
+	public function addUser(){		
+
+		$data['body'] = 'users/add';
+		echo view('common/layout',$data);
+		
+	}
+
+	public function addUserToDB(){
+
+		
+		$rules = [
+			'firstname'  => 'required|min_length[3]|max_length[50]',
+			'email'      => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.email]',
+			'password'   => 'required|min_length[6]|max_length[60]', 
+		];
+
+
+		$users_model = new UsersModel();
+
+		if ($this->validate($rules)){			
+			$data = array(
+
+				'firstname' =>  $this->request->getVar('firstname'),
+				'lastname'  =>  $this->request->getVar('lastname'),				
+				'mobile'    =>  $this->request->getVar('mobile'),				
+				'city'      =>  $this->request->getVar('city'),
+				'state'     =>  $this->request->getVar('state'),
+				'zip'       =>  $this->request->getVar('zip'),
+				'email'     =>  $this->request->getVar('email'),
+				'password'  => md5($this->request->getVar('userpassword')),
+				'level'     =>  $this->request->getVar('level'),
+				'gender'    =>  $this->request->getVar('gender'),
+				'newsletter' => $this->request->getVar('newsletter')
+
+			);
+
+			$users_model->insert_data_login($data);
+			$this->session->setFlashdata('messageRegisterOk',' Registered Successfull. Please, login.' );
+			return redirect()->to(base_url('users'));			
+		}
+		else{
+
+			$this->addUser();	
+					
+		}
+
+	}
 
 	public function editUser($id){		
 

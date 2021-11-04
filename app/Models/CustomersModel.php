@@ -6,14 +6,14 @@ use CodeIgniter\Model;
 class CustomersModel extends Model {
 
     protected $table = 'customers';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'email', 'passwd'];
+    protected $primaryKey = 'idCustomers';
+    protected $allowedFields = ['firstname','lastname','mobile','city','state','zip','email','gender','dateRegistre'];
 
     public function getData($id = null){
         if ($id == null){
             return $this->findAll();
         }
-        return $this->asArray()->where(['id' => $id])->first();
+        return $this->asArray()->where(['idCustomers' => $id])->first();
     }
 
     public function insert_data_login($data)
@@ -21,9 +21,12 @@ class CustomersModel extends Model {
         return $this->insert($data);
     }
 
-    public function checkUserPassword($data){
-        return $this->where(['email' => $data['email'], 'passwd' => md5($data['password'])])->first();
+    public function update_order($id,$data)
+    {
+        return $this->update($id, $data);
     }
+
+
 }
 
 ?>
