@@ -141,36 +141,87 @@
                         </div>
 
                          <div class="panel-tag">
-                            CADASTRO DEPENDENTE
+                            REGISTRATION SUBORDINATE
                         </div>
 
                         <div class="panel-content">
                             
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
-                                    <label class="form-label" for="validationCustom01">First name <span class="text-danger">*</span> </label>
-                                    <input type="text" class="form-control" id="validationCustom01" name="firstname" value=""  placeholder="First name" required>
+                                    <label class="form-label" for="sub_firstname">First name </label>
+                                    <input type="text" class="form-control" id="sub_firstname1" name="sub_firstname1" value=""  placeholder="First name" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label class="form-label" for="validationCustom02">Last name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" id="validationCustom02" name="lastname" value="" placeholder="Last name" required>
+                                    <label class="form-label" for="sub_lastname">Last name </label>
+                                    <input type="text" class="form-control" id="sub_lastname1" name="sub_lastname1" value="" placeholder="Last name" >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 mb-3">
-                                    <label class="form-label" for="validationCustom03">mobile <span class="text-danger">*</span></label>
-                                    <input type="number" class="form-control" id="validationCustom03" placeholder="mobile" name="mobile" value="" required>
+                                    <label class="form-label" for="sub_mobile">mobile </label>
+                                    <input type="number" class="form-control" id="sub_mobile1" placeholder="sub_mobile1" name="sub_mobile1" value="" >
                                     <div class="invalid-feedback">
                                         Please provide a valid mobile.
                                     </div>
                                 </div>                 
                             </div>
 
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" for="sub_firstname">First name </label>
+                                    <input type="text" class="form-control" id="sub_firstname2" name="sub_firstname2" value=""  placeholder="First name" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" for="sub_lastname">Last name </label>
+                                    <input type="text" class="form-control" id="sub_lastname2" name="sub_lastname2" value="" placeholder="Last name" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" for="sub_mobile">mobile </label>
+                                    <input type="number" class="form-control" id="sub_mobile2" placeholder="sub_mobile2" name="sub_mobile2" value="" >
+                                    <div class="invalid-feedback">
+                                        Please provide a valid mobile.
+                                    </div>
+                                </div>                 
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" for="sub_firstname">First name </label>
+                                    <input type="text" class="form-control" id="sub_firstname3" name="sub_firstname3" value=""  placeholder="First name" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" for="sub_lastname">Last name </label>
+                                    <input type="text" class="form-control" id="sub_lastname3" name="sub_lastname3" value="" placeholder="Last name" >
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label class="form-label" for="sub_mobile">mobile </label>
+                                    <input type="number" class="form-control" id="sub_mobile3" placeholder="sub_mobile3" name="sub_mobile3" value="" >
+                                    <div class="invalid-feedback">
+                                        Please provide a valid mobile.
+                                    </div>
+                                </div>                 
+                            </div>
+
+                            <input type="hidden" name="qtdSubordinate" value="3">
 
                         </div>    
                     

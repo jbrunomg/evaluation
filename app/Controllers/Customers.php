@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\CustomersModel;
+use App\Models\SubordinateModel;
 
 
 class Customers extends BaseController
@@ -25,15 +26,13 @@ class Customers extends BaseController
 	}
 
 	public function addUserToDB(){
-
 		
 		$rules = [
 			'firstname'  => 'required|min_length[3]|max_length[50]',
 			'email'      => 'required|min_length[6]|max_length[50]|valid_email|is_unique[customers.email]',			
 		];
 
-
-		$customers_model = new CustomersModel();
+		$customers_model = new CustomersModel();		
 
 		if ($this->validate($rules)){			
 			$data = array(
@@ -49,9 +48,32 @@ class Customers extends BaseController
 
 			);
 
-			$customers_model->insert_data_login($data);
-			$this->session->setFlashdata('messageRegisterOk',' Registered Successfull. Please, login.' );
-			return redirect()->to(base_url('customers'));			
+			$cont = $this->request->getVar('qtdSubordinate');
+
+			for ($i=1; $i <= $cont; $i++) { 
+
+                $dados[$i]['sub_firstname']  = $this->request->getVar('sub_firstname'.$i);
+                $dados[$i]['sub_lastname']   = $this->request->getVar('sub_lastname'.$i);
+                $dados[$i]['sub_mobile']     = $this->request->getVar('sub_mobile'.$i);
+                $dados[$i]['customers_id']   = '';                
+			
+			}
+
+	
+			$result = $customers_model->insert_data($data,'customers',$dados,'subordinate');
+
+			if ($result) {
+				$this->session->setFlashdata('messageRegisterOk',' Registered Successfull. Please, login.' );
+				return redirect()->to(base_url('customers'));
+
+			}else{
+				
+				$this->session->setFlashdata('messageRegisterOk',' Erro.' );	
+
+			}			
+
+
+						
 		}
 		else{
 
